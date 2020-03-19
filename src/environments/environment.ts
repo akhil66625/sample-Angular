@@ -15,10 +15,10 @@ export const environment = {
     config: {
       realm: 'Test',
       url: 'http://localhost:8080/auth/',
-      clientId: 'angular-client'
-      // credentials: {
-      //   secret: '8602455c-65db-4fe8-9614-b1c616902d35'
-      // }
+      clientId: 'spring-boot-server',
+       credentials: {
+         secret: '8602455c-65db-4fe8-9614-b1c616902d35'
+       }
     }
   },
   server: {

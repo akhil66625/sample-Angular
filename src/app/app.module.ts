@@ -10,16 +10,21 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { KeycloakAngularModule, KeycloakService, CoreModule } from 'keycloak-angular';
 import { environment } from 'src/environments/environment';
 import { ProfileComponent } from './components/profile/profile.component';
+import { EditProfileModalComponent } from './components/edit-profile-modal/edit-profile-modal.component';
 
 const keycloakService = new KeycloakService();
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditProfileModalComponent
 
   ],
-  entryComponents: [AppComponent],
+  entryComponents: [
+    AppComponent,
+    EditProfileModalComponent
+  ],
   imports: [
     BrowserModule,
     CoreModule,
@@ -28,10 +33,12 @@ const keycloakService = new KeycloakService();
     HttpClientModule,
     KeycloakAngularModule,
     ReactiveFormsModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+
   ],
   providers: [
-    { provide: KeycloakService, useValue: keycloakService }
+    {  provide: KeycloakService,
+       useValue: keycloakService}
   ]
 })
 export class AppModule implements DoBootstrap {
